@@ -23,4 +23,4 @@ eureka:
             lease-expiration-duration-in-seconds: 30
             lease-renewal-interval-in-seconds: 10
 swagger2:
-    enable: true1
+    enable: true
