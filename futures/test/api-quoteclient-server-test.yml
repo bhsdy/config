@@ -1,0 +1,30 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: finance
+    password: finance
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+    
+dataSource:
+  ip: 47.103.98.191
+  port: 7111
+  
+workerId: 0
+
+anon:
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /webjars/**
+  - /v2/api-docs
+  - /configuration/**  
+  - /quote/**

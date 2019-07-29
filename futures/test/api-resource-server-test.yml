@@ -1,0 +1,69 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/future_resource?zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: finance
+    password: finance
+    
+# ios安装地址
+IOSInstall: https://fir.im/z6jg
+
+workerId: 4
+
+anon:
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /webjars/**
+  - /v2/api-docs
+  - /notice/page
+  - /configuration/**
+  - /currency/list
+  - /currency/query
+  - /holiday/isHoliday
+  - /holiday/list
+  - /commodity/query
+  - /commodity/list
+  - /contract/list
+  - /contract/query
+  - /contract/**
+  - /exchange/list
+  - /banner/list
+  - /banner/query
+  - /system/notice/list
+  - /strategy/list
+  - /notice/list
+  - /news_flash/**
+  - /code/image/**
+  - /config/query/url/image
+  - /config/query/simulate
+  - /config/query/broker
+  - /config/query/**
+  - /systemSetting/version/query/**
+  - /riskConfig/list
+  - /customer/list
+  - /news_flash/batch/save
+  - /config/query/path/upload
+  - /market/**
+  - /strategy/**
+  - /templateRule/queryTemplate
+  - /paymentConfig/payment/query
+  - /transactionRules/rules/list
+
+ 

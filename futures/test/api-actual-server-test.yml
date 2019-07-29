@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/future_trade_actual?zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: finance
+    password: finance
+
+accountType: ACTUAL
+testMode: true
+
+workerId: 2
+
+easytrans:
+  master:
+    zk:
+      zooKeeperUrl: localhost:4180
+  stringcodec:
+    zk:
+      zooKeeperUrl: ${easytrans.master.zk.zooKeeperUrl}
+  idgen:
+    trxId:
+      zkSnow:
+        zooKeeperUrl: ${easytrans.master.zk.zooKeeperUrl}
+  log:
+    database:
+      logCleanEnabled: true
+      logReservedDays: 14
+      logCleanTime: 01:22:00
+      druid:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/dtc_translog?characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: 123456
+
+anon:
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /webjars/**
+  - /v2/api-docs
+  - /configuration/**
+  - /tradeRecord/list
+  - /tradeRecord/notify/warehouse
+  - /tradeRecord/notify/feeNotEnough
+  - /job/**

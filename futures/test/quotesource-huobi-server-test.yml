@@ -1,0 +1,31 @@
+spring:
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+
+marketType: DIGICCY
+containMinutePoint: false
+
+quotecenter:
+  ip: 127.0.0.1
+  port: 7001
+
+huobi:
+   url: wss://www.hbdm.com/ws
+
+anon:
+  - /subscribe
+  - /unsubscribe
+  - /register/slave
+  - /heartbeat
+  - /gapprice/**
+  - /index.html
+  - /node_modules/**
+  - /favicon.ico

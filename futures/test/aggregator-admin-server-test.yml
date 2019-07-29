@@ -1,0 +1,62 @@
+server:
+  port: 8700
+tcp:
+  host: 0.0.0.0
+  port: 8701
+  ioThreadNum: 4
+  backlog: 1024
+  openProxyProtocol: true
+websocket:
+  host: 0.0.0.0
+  port: 8702
+  ioThreadNum: 4
+  backlog: 1024
+  openProxyProtocol: false
+  
+threadPool:
+  maxThreads: 500
+  minSpareThreads: 25
+  maxIdleTime: 60000
+  maxQueueSize: 1000
+
+anon:
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /webjars/**
+  - /v2/api-docs
+  - /configuration/**
+  - /MemberSimulationDisk/queryMemberListSimulationDisk
+  - /MemberSimulationDisk/queryMemberAssetSimulationDisk
+  - /simulationEntrustOrder/queryEntrustOrder
+  - /simulationEntrustOrder/queryPostionOrder
+  - /simulationEntrustOrder/queryTradeRecord
+  - /simulationEntrustOrder/getProfitLossOrder
+  - /heartbeat
+  - /login
+  - /news_flash/**
+  - /push/**
+  - /config/payment/callback
+  - /config/**
+  - /templateRule/queryTemplate
+  - /userTemplate/query
+  
+spring:
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: finance
+    password: finance
+
+  
+openPermission: true
+testValue: "12"

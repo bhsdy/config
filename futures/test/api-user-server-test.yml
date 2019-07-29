@@ -1,0 +1,82 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/future_user?zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: finance
+    password: finance
+
+workerId: 1
+
+easytrans:
+  master:
+    zk:
+      zooKeeperUrl: localhost:4180
+  stringcodec:
+    zk:
+      zooKeeperUrl: ${easytrans.master.zk.zooKeeperUrl}
+  idgen:
+    trxId:
+      zkSnow:
+        zooKeeperUrl: ${easytrans.master.zk.zooKeeperUrl}
+  log:
+    database:
+      logCleanEnabled: true
+      logReservedDays: 14
+      logCleanTime: 05:30:00
+      druid:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/dtc_translog?characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: 123456
+
+anon:
+  - /easytrans/**/**
+  - /user/queryUserList
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /webjars/**
+  - /v2/api-docs
+  - /account/**
+  - /configuration/**
+  - /user/allowTrade
+  - /user/queryUserMemberSimulationDisk
+  - /user/queryUserMemberAssetSimulationDisk
+  - /user/login
+  - /user/register
+  - /user/query
+  - /user/list2
+  - /user/employee/list
+  - /user/profile/list
+  - /user/register/loginServer
+  - /user/update/password/login1
+  - /user/update/password/login2
+  - /user/verify/username
+  - /user/storeToken
+  - /user/cleanToken
+  - /user/apply/create
+  - /broker/rebateRecord/create
+  - /broker/list/*
+  - /broker/query/*
+  - /broker/commodity/list*
+  - /broker/settle
+  - /payment/queryById
+  - /payment/update
+  - /userTemplate/query
+  

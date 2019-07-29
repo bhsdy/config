@@ -1,0 +1,57 @@
+spring:
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 100
+      max-wait: 100
+
+workerId: 5
+
+sms:
+   apitype: 2
+   clx:
+      appid: 63f210037eee4ae7bdd44e05aea7179a
+      secret: a96bc2df54ca43f8bbacc396a478f1ae
+      sign: '赢透国际期货'
+      expiredSeconds: 600
+   juhe:
+      url: http://v.juhe.cn/sms/send
+      key: b54e74f38026953caa0ffa3f6480108d
+      expiredSeconds: 600
+      templateIdMap: "{yingtou:'93862', wantong:'97366', yingshun:'115331'}"
+    
+app:
+   jiguang:
+      url:
+         push: https://api.jpush.cn/v3/push
+         device: https://device.jpush.cn/v3/devices
+      appKey: dfaf235e392e8a3d04f2aaa6
+      secretKey: d909547c5a2c1bb3295e14b3
+
+idcard:
+   juhe:
+      url: http://op.juhe.cn/idcard/query
+      key: 59b3a2d3bc4bb280fcf88cf2603b8e65
+
+bankcard:
+  juhe:
+    url: http://v.juhe.cn/verifybankcard4/query
+    key: 0f9bf94ffabaf1b2d1f9e6ba0e6965f6
+
+anon:
+  - /sms/send
+  - /sms/verify
+  - /sms/delete
+  - /app/push
+  - /app/push/list
+  - /app/push/all
+  - /app/bind
+  - /app/unbind
+  - /config/payment/callback
+  - /news_flash/grap
+  - /config/**

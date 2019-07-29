@@ -1,0 +1,38 @@
+marketType: OUTER
+containMinutePoint: false
+
+quotecenter:
+  ip: 127.0.0.1
+  port: 7001
+
+ib:
+   host: 47.102.42.54
+   port: 7496
+   clientId: 1000
+
+cluster:
+   server:
+      main:
+         ip: 0.0.0.0
+         port: 7016
+   
+contract:
+   CL: FUT;NYMEX;CL;USD;1000
+   DAX: FUT;DTB;DAX;EUR;25
+   GC: FUT;NYMEX;GC;USD;100
+   HG: FUT;NYMEX;HG;USD;25000
+   SI: FUT;NYMEX;SI;USD;5000
+   CD: FUT;GLOBEX;CAD;USD;100000
+   BP: FUT;GLOBEX;GBP;USD;62500
+   EC: FUT;GLOBEX;EUR;USD;125000
+   AD: FUT;GLOBEX;AUD;USD;100000
+   NQ: FUT;GLOBEX;NQ;USD;20
+   HSI: FUT;HKFE;HSI;HKD;50
+   MHI: FUT;HKFE;MHI;HKD;10
+   CN: FUT;SGX;XINA50;USD;1
+   
+anon:
+  - /subscribe
+  - /unsubscribe
+  - /register/slave
+  - /heartbeat

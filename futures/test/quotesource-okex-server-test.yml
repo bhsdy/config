@@ -1,0 +1,11 @@
+marketType: INNER
+
+ctp:
+   url: tcp://218.202.237.33:10012
+   username: 13040878023
+   password: Yingtou0430
+   brokerId: 9999
+
+anon:
+  - /subscribe
+  - /unsubscribe
