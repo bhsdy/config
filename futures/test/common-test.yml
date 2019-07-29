@@ -21,7 +21,7 @@ hystrix:
             timeoutInMilliseconds: 30000
             
 ribbon:
-    ReadTimeout: 30000
-    ConnectTimeout: 30000 
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
   
 innerIp: 127.0.0.1,0.0.0.0.0.1,172.19.218.101,47.103.99.229,172.19.218.107
