@@ -29,7 +29,7 @@ workerId: 3
 easytrans:
   master:
     zk:
-      zooKeeperUrl: localhost:4180
+      zooKeeperUrl: localhost:2181
   stringcodec:
     zk:
       zooKeeperUrl: ${easytrans.master.zk.zooKeeperUrl}
